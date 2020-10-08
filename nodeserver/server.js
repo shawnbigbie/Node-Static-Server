@@ -1,6 +1,6 @@
 var static = require('node-static');
 
-var port = 8000;
+var port = process.env.PORT || 8000;
  
 var file = new static.Server('./public');
  
@@ -13,5 +13,5 @@ require('http').createServer(function (request, response) {
         });
     }).resume();
 }).listen(port, function(){
-    console.log('Server started on port ' +port);
+    console.log('Server started on port ' + port);
 });
